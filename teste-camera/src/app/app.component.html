@@ -1,0 +1,7 @@
+  <div class="container">
+    <h1>Teste Camera Nativa</h1>
+    
+    <input #inputFile type="file" capture="camera" accept="image/*" class="camera__native" (change)="capture($event)">
+    
+    <button class="button-file" (click)="inputFile.click()">abrir camera</button>
+  </div>
