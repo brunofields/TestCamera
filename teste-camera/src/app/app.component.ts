@@ -8,18 +8,22 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'teste-camera';
 
+
+  fileInfo: string = '';
+
   capture(event: any) {
     const file = event.target.files[0];
+    this.fileInfo = 'imagem carregada com os dados: '+ '</br>nome: ' + file.name + '</br>tipo: ' + file.type + '</br>tamanho: ' + file.size;
 
     const reader = new FileReader();
 
     reader.onload = (eventLoad: any) => {
       const img = new Image();
       img.onload = () => {
-        alert('imagem carregada :)')
       } 
     }
     reader.readAsDataURL(file);
+    alert('imagem carregada com sucesso =D')
   }
-
+  
 }

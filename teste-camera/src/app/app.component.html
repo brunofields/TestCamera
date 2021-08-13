@@ -1,5 +1,9 @@
   <div class="container">
     <h1>Teste Camera Nativa</h1>
+
+    <ng-container *ngIf="fileInfo">
+      <p [innerHtml]="fileInfo"></p>
+    </ng-container>
     
     <input #inputFile type="file" capture="camera" accept="image/*" class="camera__native" (change)="capture($event)">
     
